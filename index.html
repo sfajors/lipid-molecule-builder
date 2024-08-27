@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipid Molecule Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Schoolbell&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="learningModuleContainer" style="display: none;" class="learning-module-container">
+        <h1 class="learning-module-title">Introduction to Lipids</h1>
+        <section class="module">
+            <h2 class="module-title">Introduction to Lipids</h2>
+            <div class="module-text">Lipids are a special kind of molecule that your body needs to stay healthy. But what exactly are they? Today, we're going to explore what lipids are, how they are named, and why they are so important. By the end of this lesson, you'll know all about the different types of lipids and their superpowers!</div>
+        </section>
+    
+        <section class="module">
+            <h2 class="module-title">Importance of Lipids</h2>
+            <div class="module-text">Here are some cool things lipids do for you:</div>
+            <ul style="margin-top: 0.5em">
+                <li>Store energy for when you need it.</li>
+                <li>Protect your organs by acting like cushions.</li>
+                <li>Help build cell membranes, which protect your cells.</li>
+                <li>Keep you warm, like a blanket.</li>
+                <li>Help certain vitamins work properly.</li>
+            </ul>
+        </section>
+
+        <section class="module">
+            <h2 class="module-title">Lipid Nomenclature</h2>
+            <div class="module-text">Lipids have special names, just like superheroes! Let's learn about them:</div>
+            <ul style="margin-top: 0.5em;">
+                <li><span class="bold">Fats and Oils:</span> Solid lipids are called fats, like butter. Liquid lipids are oils, like olive oil.</li>
+                <li><span class="bold">Fatty Acids:</span> The building blocks of lipids. Some are straight (saturated), and some are bent (unsaturated).</li>
+                <li><span class="bold">Glycerol:</span> A small molecule that acts as the backbone for triglycerides. It connects to three fatty acids to form a triglyceride.</li>
+                <li><span class="bold">Phospholipids:</span> Lipids that help build cell membranes, with a part that likes water and a part that doesn't.</li>
+                <li><span class="bold">Sterols:</span> Ring-shaped lipids like cholesterol that help build cells and make hormones.</li>
+            </ul>
+        </section>
+    
+        <section class="module">
+            <h2 class="module-title">Experiment: Identifying Lipids</h2>
+            <div class="module-text">Let's pretend we're in a lab! Drag the food items onto the paper to see if they leave a greasy spot.</div>
+            <div id="experiment">
+                <div class="food" draggable="true" ondragstart="drag(event)" id="butter">Butter</div>
+                <div class="food" draggable="true" ondragstart="drag(event)" id="oil">Oil</div>
+                <div class="food" draggable="true" ondragstart="drag(event)" id="cheese">Cheese</div>
+                <div class="food" draggable="true" ondragstart="drag(event)" id="bread">Bread</div>
+                <div class="food" draggable="true" ondragstart="drag(event)" id="apple">Apple</div>
+            </div>
+            <div id="paper" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="module-text">Drop the food here to test for lipids</div>
+            </div>
+            <div id="experimentFeedback" class="feedback"></div>
+        </section>
+    
+        <section class="module">
+            <h2 class="module-title">Wrap-Up and Conclusion</h2>
+            <div class="module-text">Great job learning about lipids! Remember, lipids are essential for energy, protection, and helping your body stay healthy. Can you think of any foods at home that contain the lipids we talked about today?</div>
+            <button onclick="showBuilder()" class="triglyceride-builder">Go To Triglyceride Excercise</button>
+        </section>
+    </div>
+
+    <!-- Triglyceride Builder -->
+    <div id="builderContainer" class="builder-container">
+        <span class="builder-title-pc">
+            <h1 class="title">Build a Triglyceride</h1>
+            <div>
+                <button onclick="showLearningModule()" class="lm-button">Learning Module</button>
+                <button class="instructions-button" onclick="showInstructions()">Instructions</button>
+                <section id="instructionsModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeInstructions()">&times;</span>
+                        <h2 class="instructions-title">Instructions</h2>
+                        <div>Here are the instructions for using the Triglyceride Builder:</div>
+                        <ul>
+                            <li><strong>Drag and Drop:</strong> Drag atoms from the left panel onto the workspace to start building molecules.</li>
+                            <li><strong>Undo/Redo:</strong> Use the Undo and Redo buttons to reverse or reapply your last action.</li>
+                            <li><strong>Expand/Shrink Workspace:</strong> Adjust the size of the workspace if you need more or less space.</li>
+                            <li><strong>Reset:</strong> Click the Reset button to clear the workspace and start over.</li>
+                            <li><strong>Create a Triglyceride:</strong> Combine the correct number of carbon, hydrogen, and oxygen atoms to form glycerol and fatty acids. Then, combine these to form a triglyceride.</li>
+                        </ul>
+                
+                        <button class="toggle-btn" onclick="toggleVisibility('hintContent')">Show Hint</button>
+                        <div id="hintContent" style="display: none;">
+                            <ul style="margin-top: 0; margin-bottom: 1em;">
+                                <li><strong>Glycerol:</strong> Imagine building a small structure using three carbon pieces. Each piece needs one oxygen, and together they share eight hydrogen helpers. Can you arrange these 3 carbons, 3 oxygens, and 8 hydrogens to form a complete glycerol molecule?</li>
+                                <li><strong>Fatty Acid Chain:</strong> Picture a long chain with 12 carbon links. Most of these links need two hydrogen buddies, but to make the whole chain stable, you'll need 26 hydrogens in total. How do you think these 12 carbons and 26 hydrogens come together to form a fatty acid chain?</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="toggle-btn" onclick="toggleVisibility('solutionContent')">Show Solution</button>
+                        <div id="solutionContent" style="display: none;">
+                            <ul>
+                                <li><strong>Glycerol:</strong> 3 Carbon, 8 Hydrogen, 3 Oxygen</li>
+                                <li><strong>Fatty Acid Chain:</strong> 12 Carbon and 26 Hydrogen</li>
+                                <li><strong>Triglyceride:</strong> 1 Glycerol, 3 Fatty Acids</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>                
+            </div>
+        </span>
+        <div class="builder">
+            <div class="atoms">
+                <span class="atoms-pc">
+                    <div class="tooltip-container">
+                        <div class="atom carbon" draggable="true" data-bonds="4">C</div>
+                        <span class="tooltip-text">Carbon (C)</span>
+                    </div>
+                    <div class="tooltip-container">
+                        <div class="atom hydrogen" draggable="true" data-bonds="1">H</div>
+                        <span class="tooltip-text">Hydrogen (H)</span>
+                    </div>
+                    <div class="tooltip-container">
+                        <div class="atom oxygen" draggable="true" data-bonds="2">O</div>
+                        <span class="tooltip-text">Oxygen (O)</span>
+                    </div>                
+                </span>
+            </div>
+
+            <section>
+                <div id="workspace">
+                    <p class="workspace-description">Drag and drop atoms to build a molecule:</p>
+                </div>
+                <div class="controls">
+                    <button onclick="undo()" class="undo-btn">Undo</button>
+                    <button onclick="redo()" class="redo-btn">Redo</button>
+                    <button onclick="expandWorkspace()" class="expand-btn">Expand Workspace</button>
+                    <button onclick="shrinkWorkspace()" class="shrink-btn">Shrink Workspace</button>
+                    <button onclick="resetWorkspace()" class="reset-btn">Reset Workspace</button>
+                </div>
+            </section>
+
+            <section>
+                <div id="output">
+                    <p class="output-description">Output will appear here:</p>
+                </div>
+                <div id="infoContainer">
+                    <h2 id="infoTitle">Molecule Information</h2>
+                    <div id="infoDescription">Hover over a molecule to see details here.</div>
+                </div>
+            </section>
+        </div>
+    </div>    
+
+    <script src="script.js"></script>
+</body>
+</html>

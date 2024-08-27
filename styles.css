@@ -1,0 +1,494 @@
+body, html {
+    font-family: "Andika", sans-serif;
+    font-size: 16px;
+    background: #999eb3;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+}
+
+.learning-module-title {
+    background-color: #f0cfcb;
+    border-radius: 10px;
+    color: #ce240e;
+    text-decoration: underline;
+    font-family: "Libre Baskerville", serif;
+    width: fit-content;
+    padding: 0.75em 1em;
+    margin: 0.5em auto;
+}
+
+.module {
+    background-color: #ffffff;
+    width: 50%;
+    padding: 1.25em;
+    margin: 1em auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.module-title {
+    color: #752db8;
+    font-family: "Schoolbell", cursive, sans-serif;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+
+#experiment {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.food {
+    font-family: "Schoolbell", cusrive, sans-serif;
+    background-color: #ffeb3b;
+    padding: 0.75em 1em;
+    margin-top: 1em;
+    border-radius: 5px;
+    cursor: grab;
+    font-weight: bold;
+    color: #333;
+}
+
+#paper {
+    border: 2px dashed #4a90e2;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #e0f7fa;
+    min-height: 150px;
+    transition: background-color 0.3s ease;
+}
+
+#paper div {
+    margin: 0;
+    color: #333;
+}
+
+.triglyceride-builder {
+    display: block;
+    border: 1.5px dotted #158a78;
+    background-color: #2db8a3;
+    color: white;
+    font-family: "Libre Bakserville", serif;
+    font-size: 1.2em;
+    font-variant: all-small-caps;
+    font-style: italic;
+    margin: 1em auto;
+    padding: 0.25em 0.5em;
+}
+
+.triglyceride-builder:hover {
+    font-weight: bold;
+    background-color: #158a78;
+    border: 1.5px dotted #2db8a3;
+    transition: background-color 0.3s ease-in;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.builder-title-pc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lm-button,
+.instructions-button {
+    display: block;
+    border-radius: 15px;
+    border: 1px solid black;
+    font-family: "Schoolbell", cursive, sans-serif;
+    background-color: transparent;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.lm-button:hover,
+.instructions-button:hover {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.title {
+    background-color: #ff9900;
+    color: white;
+    border-bottom: 2px solid white;
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5em 0.8em;
+    width: fit-content;
+    margin: 0.5em;
+    margin-bottom: 0;
+}
+
+.builder {
+    display: flex;
+    width: fit-content;
+    max-width: 98%;
+    margin: 1em auto 0.25em;
+    padding: 1.25em;
+    overflow-x: scroll;
+}
+
+#workspace {
+    width: 800px;
+    height: 500px;
+    border: 1.5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    background-color: #f0f0f0;
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#output .glycerol:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+#output {
+    width: 300px;
+    height: 450px;
+    border: 1px solid #888;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f8f8f8;
+    position: relative;
+    overflow: hidden;
+    margin-left: 20px;  /* Space between workspace and output */
+}
+
+.workspace-description,
+.output-description {
+    font-size: 1em;
+    width: fit-content;
+    max-width: 100%;
+    margin: 1em;
+    padding: 0.75em;
+    background-color: #f0f0f0;
+}
+
+.workspace-description {
+    border: 1px solid #13a480;
+    border-radius: 10px;
+    color: #13a480;
+}
+
+.output-description {
+    font-family: "Schoolbell", cursive, sans-serif;
+    background-color: #e00986;
+    color: white;
+}
+
+.atoms {
+    border: 1px dashed black;
+    border-radius: 20px;
+    padding: 0.8em;
+    width: fit-content;
+    height: fit-content;
+    max-height: 50%;
+    margin: 1em;
+}
+
+.atoms-pc {
+    display: flex;
+    flex-direction: column;
+}
+
+.atom {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make atoms circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: grab;
+    border: 2px solid #000; /* Outline to enhance visibility */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.atom:hover {
+    transform: scale(1.2); /* Slight enlargement */
+    filter: brightness(1.2); /* Slightly brighten the color */
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the atom/button */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.carbon { background-color: #ce240e; color: #fff; }
+.hydrogen { background-color: #f4f5f4; color: #333; }
+.oxygen { background-color: #e635d2; color: #fff; }
+
+/* Modal styles */
+#infoContainer {
+    max-width: 300px;
+    width: 75%;
+    padding: 1.25em;
+    margin: 1em auto;
+    border: 1px solid #888;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: "Andika", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+#infoTitle {
+    color: #ce240e;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+
+#infoDescription {
+    max-width: 95%;
+    font-size: 14px;
+    color: #555;
+    border: 1px dashed #ce240e;
+    padding: 0.25em 0.5em;
+}
+
+.undo-btn,
+.redo-btn,
+.expand-btn,
+.shrink-btn,
+.reset-btn {
+    font-family: "Schoolbell", cursive;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.45em 0.8em;
+}
+
+.undo-btn {
+    background-color: #ba601c;
+    color: white;
+    border: 1px solid #ba601c;
+}
+
+.redo-btn {
+    background-color: #e8cd03;
+    color: white;
+    border: 1px solid white;
+}
+
+.expand-btn {
+    background-color: #1cba1c;
+    color: white;
+    border: 1px solid white;
+}
+
+.shrink-btn {
+    background-color: #bde4ef;
+    color: #0694bb;
+    border: 1px solid #0694bb;
+}
+
+.reset-btn {
+    background-color: #8152c3;
+    color: #ece7f4;
+    border: 1px solid #8152c3;
+}
+
+.undo-btn:hover,
+.redo-btn:hover,
+.expand-btn:hover,
+.shrink-btn:hover,
+.reset-btn:hover {
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.instructions-title {
+    margin-bottom: 0.25em;
+    font-family: "Schoolbell", cursive, sans-serif;
+}
+
+/* Toggle Visibility */
+.toggle-btn {
+    background-color: #2db8a3;
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1em;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+}
+
+.toggle-btn:hover {
+    background-color: #158a78;
+    transition: background-color 0.3s ease-in;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: fit-content;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* The Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Responsive Design */
+@media (min-width: 280px) and (max-width: 500px) {
+    .learning-module-title {
+        width: 75%;
+    }
+    .module {
+        width: 75%;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 1000px) {
+    body {
+        font-size: 90%;
+    }
+
+    .builder {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        width: 85%;
+    }
+
+    .atoms-pc {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .atoms {
+        margin: 0 auto;
+    }
+
+    .atom {
+        width: 30px;
+        height: 30px;
+        margin: 0.5em;
+    }
+
+    #workspace {
+        width: 90%;
+        margin: 1em auto;
+        height: 600px;
+    }
+    
+    #output {
+        width: 90%;
+        margin: 1em auto;
+        height: 600px;
+    }
+
+    #infoContainer {
+        width: 85%;
+        text-align: center;
+    }
+
+    .controls {
+        width: fit-content;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .expand-btn,
+    .shrink-btn {
+        display: none;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    body, html {
+        font-size: 100%;
+    }
+
+    .atom {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1300px) {
+    #workspace {
+        width: 500px;
+    }
+    
+    #output {
+        width: 300px;
+        margin-left: 8px;  /* Space between workspace and output */
+    }
+
+    .expand-btn {
+        display: none;
+    }
+}
